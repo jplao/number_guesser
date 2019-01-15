@@ -7,7 +7,7 @@ function submitGuess(){
   } else {
     var feedback = "BOOM!";
   };
-  document.getElementById("feedback").interHTML= feedback;
+  document.getElementById("feedback").innerHTML= feedback;
 }
 
 function randomNumber(){

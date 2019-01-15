@@ -11,5 +11,8 @@ function submitGuess(){
     document.getElementById("feedback").interHTML= "BOOM!";
 }
 
+function randomNumber(){
+  Math.floor(Math.random() * 100) + 1;
+}
 
-var answer = Math.floor(Math.random() * 100) + 1;
+var answer = randomNumber();

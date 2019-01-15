@@ -1,12 +1,13 @@
 function submitGuess(){
   var guess = document.getElementById("guess").value;
   if (guess > answer) {
-    document.getElementById("feedback").interHTML= "That is too high";
+    var feedback = "That is too high";
   } else if (guess < answer){
-    document.getElementById("feedback").interHTML= "That is too low";
-  } else (guess == answer){
-    document.getElementById("feedback").interHTML= "BOOM!";
-  }
+    var feedback = "That is too low";
+  } else {
+    var feedback = "BOOM!";
+  };
+  document.getElementById("feedback").interHTML= feedback;
 }
 
 function randomNumber(){

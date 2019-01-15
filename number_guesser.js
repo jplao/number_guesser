@@ -15,11 +15,11 @@ function randomNumber(){
 }
 
 function clearInput(){
-  document.getElementById("guess").value = ""
+  document.getElementById("guess").value = "";
 }
 
 function resetFeedback(){
-  document.getElementById("feedback").innerHTML = ""
+  document.getElementById("feedback").innerHTML = "";
 }
 
 function resetGame(){

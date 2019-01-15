@@ -11,7 +11,7 @@ function submitGuess(){
 }
 
 function randomNumber(){
-  Math.floor(Math.random() * 100) + 1;
+  return Math.floor(Math.random() * 100) + 1;
 }
 
 var answer = randomNumber();

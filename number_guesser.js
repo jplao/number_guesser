@@ -7,7 +7,7 @@ function submitGuess(){
   } else {
     var feedback = "BOOM!";
   };
-  document.getElementById("feedback").innerHTML= feedback;
+  document.getElementById("feedback").innerHTML= 'Your Last guess was' + guess + feedback;
 }
 
 function randomNumber(){

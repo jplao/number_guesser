@@ -19,8 +19,8 @@ function validGuess(guess){
   message = document.getElementById("feedback")
   if (isNaN(guess)){
     message.innerHTML = "Please enter a number";
-  } else if (Number(guess) < 1 || Number(guess) > 100){
-    message.innerHTML = "Please enter a number between 1 and 100";
+  } else if (Number(guess) < min || Number(guess) > max){
+    message.innerHTML = `Please enter a number between ${min} and ${max}`;
   } else {
     var feedback = getFeedback(guess);
     message.innerHTML = feedback;

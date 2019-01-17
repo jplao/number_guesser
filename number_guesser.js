@@ -1,5 +1,11 @@
 function randomNumber(){
-  return Math.floor(Math.random() * 100) + 1;
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function setRange(){
+  min = parseInt(document.getElementById("minimum").value);
+  max = parseInt(document.getElementById("maximum").value);
+  answer = randomNumber();
 }
 
 function submitGuess(){
@@ -13,8 +19,8 @@ function validGuess(guess){
   message = document.getElementById("feedback")
   if (isNaN(guess)){
     message.innerHTML = "Please enter a number";
-  } else if (Number(guess) < 0 || Number(guess) > 100){
-    message.innerHTML = "Please enter a number between 0 and 100";
+  } else if (Number(guess) < min || Number(guess) > max){
+    message.innerHTML = `Please enter a number between ${min} and ${max}`;
   } else {
     var feedback = getFeedback(guess);
     message.innerHTML = feedback;
@@ -31,11 +37,23 @@ function getFeedback(guess){
       return `${text}
         <h1> ${guess} </h1>
         That is too low`;
-  } else {
+  } else if (guess == answer){
+      winCondition();
       return `${text}
         <h1> ${guess} </h1>
-        <h2> BOOM! </h2>`;
+        <h2> BOOM! </h2>
+        You guessed correctly!
+        Your new range is now ${min} to ${max}.`
+        ;
   };
+}
+
+function winCondition(){
+  min -= 10;
+  max += 10;
+  document.getElementById("minimum").value = min;
+  document.getElementById("maximum").value = max;
+  answer = randomNumber();
 }
 
 function clearInput(){
@@ -59,8 +77,17 @@ function enableButton(button){
 function resetGame(){
   clearInput();
   resetFeedback();
+  resetRange();
   answer = randomNumber();
 }
 
+function resetRange(){
+  min = 0;
+  max = 100;
+  document.getElementById("minimum").value = min;
+  document.getElementById("maximum").value = max;
+}
 
+var min = 0;
+var max = 100;
 var answer = randomNumber();

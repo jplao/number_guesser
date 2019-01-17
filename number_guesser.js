@@ -38,10 +38,22 @@ function getFeedback(guess){
         <h1> ${guess} </h1>
         That is too low`;
   } else if (guess == answer){
+      winCondition();
       return `${text}
         <h1> ${guess} </h1>
-        <h2> BOOM! </h2>`;
+        <h2> BOOM! </h2>
+        You guessed correctly!
+        Your new range is now ${min} to ${max}.`
+        ;
   };
+}
+
+function winCondition(){
+  min -= 10;
+  max += 10;
+  document.getElementById("minimum").value = min;
+  document.getElementById("maximum").value = max;
+  answer = randomNumber();
 }
 
 function clearInput(){
@@ -65,9 +77,17 @@ function enableButton(button){
 function resetGame(){
   clearInput();
   resetFeedback();
+  resetRange();
   answer = randomNumber();
 }
 
-var min = 1;
+function resetRange(){
+  min = 0;
+  max = 100;
+  document.getElementById("minimum").value = min;
+  document.getElementById("maximum").value = max;
+}
+
+var min = 0;
 var max = 100;
 var answer = randomNumber();

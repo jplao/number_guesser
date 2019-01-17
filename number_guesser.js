@@ -1,5 +1,11 @@
 function randomNumber(){
-  return Math.floor(Math.random() * 100) + 1;
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function setRange(){
+  min = parseInt(document.getElementById("minimum").value);
+  max = parseInt(document.getElementById("maximum").value);
+  answer = randomNumber();
 }
 
 function submitGuess(){
@@ -13,8 +19,8 @@ function validGuess(guess){
   message = document.getElementById("feedback")
   if (isNaN(guess)){
     message.innerHTML = "Please enter a number";
-  } else if (Number(guess) < 0 || Number(guess) > 100){
-    message.innerHTML = "Please enter a number between 0 and 100";
+  } else if (Number(guess) < 1 || Number(guess) > 100){
+    message.innerHTML = "Please enter a number between 1 and 100";
   } else {
     var feedback = getFeedback(guess);
     message.innerHTML = feedback;
@@ -31,7 +37,7 @@ function getFeedback(guess){
       return `${text}
         <h1> ${guess} </h1>
         That is too low`;
-  } else {
+  } else if (guess == answer){
       return `${text}
         <h1> ${guess} </h1>
         <h2> BOOM! </h2>`;
@@ -62,5 +68,6 @@ function resetGame(){
   answer = randomNumber();
 }
 
-
+var min = 1;
+var max = 100;
 var answer = randomNumber();

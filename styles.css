@@ -1,0 +1,14 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.button{
+  border-radius: 12px;
+  background-color: #929497;
+  color: #FFFFFF;
+}
+
+.button:hover {
+  background-color: #EB008B;
+  color: white;
+}

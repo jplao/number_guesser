@@ -6,16 +6,26 @@ function submitGuess(){
   var guess = document.getElementById("guess").value;
   enableButton('clear');
   enableButton('reset');
-  if (guess > answer) {
-    var feedback = "That is too high";
-  } else if (guess < answer){
-    var feedback = "That is too low";
-  } else {
-    var feedback = "BOOM!";
-  };
-  document.getElementById("feedback").innerHTML = 'Your Last guess was' + guess + feedback;
+  var feedback = getFeedback(guess);
+  document.getElementById("feedback").innerHTML = feedback;
 }
 
+function getFeedback(guess){
+  text = `Your last guess was`
+  if (guess > answer) {
+    return `${text}
+      <h1> ${guess} </h1>
+      That is too high`;
+  } else if (guess < answer){
+      return `${text}
+        <h1> ${guess} </h1>
+        That is too low`;
+  } else {
+    return `${text}
+      <h1> ${guess} </h1>
+      <h2> BOOM! </h2>`;
+  };
+}
 
 function clearInput(){
   disableButton("clear");
@@ -37,9 +47,7 @@ function enableButton(button){
 
 function resetGame(){
   clearInput();
-  disableButton('clear');
   resetFeedback();
-  disableButton('reset');
   answer = randomNumber();
 }
 

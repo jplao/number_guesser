@@ -25,16 +25,16 @@ function getFeedback(guess){
   text = `Your last guess was`
   if (guess > answer) {
     return `${text}
-      <h1> ${guess} </h1>
+      <h2> ${guess} </h2>
       That is too high`;
   } else if (guess < answer){
       return `${text}
-        <h1> ${guess} </h1>
+        <h2> ${guess} </h2>
         That is too low`;
   } else {
       return `${text}
-        <h1> ${guess} </h1>
-        <h2> BOOM! </h2>`;
+        <h2> ${guess} </h2>
+        <h3> BOOM! </h3>`;
   };
 }
 

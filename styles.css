@@ -1,5 +1,11 @@
 body {
   font-family: "Open Sans", sans-serif;
+  color: #404041;
+  text-align: center;
+}
+
+h2 {
+  color: #ED458B;
 }
 
 .button{
@@ -10,5 +16,10 @@ body {
 
 .button:hover {
   background-color: #EB008B;
-  color: white;
+  color: #FFFFFF;
+}
+
+.button:disabled {
+  background-color: #D0D2D3;
+  color: #FFFFFF;
 }

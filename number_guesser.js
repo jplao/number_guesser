@@ -43,7 +43,7 @@ function getFeedback(guess){
         <h2> ${guess} </h2>
         <h3> BOOM! </h3>
         You guessed correctly!
-        Your new range is now ${min} to ${max}.`
+        Your new range is now ${min} to ${max} and another number has been generated.`
         ;
   };
 }

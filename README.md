@@ -10,7 +10,7 @@ From GitHub clone down repository using the following commands in terminal:
 * `git clone git@github.com:jplao/number_guesser.git`
 * `cd number_guesser`
 
-You can try it yourself by opening the file using your finder or by visiting [here](https://jplao.github.io/number_guesser/)
+You can try it yourself by opening the index.html file using your finder or by visiting [here](https://jplao.github.io/number_guesser/)
 
 ## Using the App
 

@@ -28,7 +28,7 @@ function validGuess(guess){
 }
 
 function getFeedback(guess){
-  text = `Your last guess was`
+  const text = `Your last guess was`
   if (guess > answer) {
     return `${text}
       <h2> ${guess} </h2>
